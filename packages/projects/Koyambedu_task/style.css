@@ -1,0 +1,290 @@
+.fa-angle-double-left, span
+{
+  color: white;
+}
+.base {
+    padding-top: 5px;
+  }
+  .bu {
+    display: block;
+    width: 120px;
+    height: 35px;
+    padding: 0%;
+    border-radius: 5%;
+  }
+  .container-fluid
+  {
+    padding-top: 10px;
+    border-style: outset;
+  }
+  .heading {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    height: 45px;
+    align-items: center;
+    padding: 5px;
+    font-family: fangsong;
+    background-image: linear-gradient(to right, #0dcaf0, darkblue);
+    display: block;
+  }
+  nav{
+    background-color: darkslateblue;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .navbar-nav
+  {
+    padding-left: 150px;
+    text-align: center;
+  }
+  .nav-item
+  {
+    float: left;
+    display: block;
+    margin-right: 10%;
+    width: 50%;
+  }
+  .nav-link
+  {
+    color: white;
+    text-align: center;
+  }
+  .nav-item:hover
+  {
+    background-color: rgb(23, 23, 99);
+    background-size: 100%;
+  }
+  #help {
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-top: 15px;
+  }
+  #help:hover
+  {
+    width: 38px;
+    color: yellow;
+  }
+  .bigT
+  {
+    width: 90%; 
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .BTt1
+  {
+    width: 90%
+  }
+  .hidediv
+  {
+    display: none;
+  }
+  .ii {
+    float: right;
+    margin-right: 10px;
+    position: relative;
+  }
+  .BTt2
+  {
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    display: revert;
+    padding-left: 30px;
+  }
+  .del {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    color:white;
+    border: none;
+    border-style: unset;
+  }
+  .fa-trash:hover
+  {
+    width: 36px;
+    height: 36px;
+    color: black;
+  }
+  .bbu
+  {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    border-radius: 0%;
+    margin-bottom: 1px;
+  }
+  
+  label
+  {
+    background-color: rgb(19, 176, 238);
+    padding: 0;
+    text-align: center;
+    width: 180px;
+    height: 32px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  big{
+    color: red;
+    content: icon;
+    font-weight: bold;
+    align-items: center;
+  }
+  input
+  {
+    outline:0;
+    border-width: 0 0 1px;
+    border-color: lightgray;
+    padding-bottom: 5px;
+  }
+  /*
+  table,tr,td{
+    border: 1px solid black;
+  }
+  
+  table
+  {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    border: inherit;
+    border-color: none;
+  }*/
+  .bg-light tr, .bg-light td{
+    
+    padding: 20px;
+  }
+  select
+  {
+    width: 185px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: lightgray;
+    background-color: transparent ;
+    padding-bottom: 5px;
+  }
+  select:hover, input:hover
+  {
+    color: black;
+    border-width: 0 0 2px;
+    border-color:lightskyblue;
+  }
+  option
+  {
+    color: black;
+  }
+  .col-sm-2
+  {
+    background-image: url('dummy1.png');
+    background-size: 100% 210px;
+    border: 1px solid white;
+    color: black;
+    width: 170px;
+  }
+  .row
+  {
+    width: 100%;
+    padding-top: 50px;
+    overflow-y: scroll;
+    height: 210px;
+    margin: 0%;
+  }
+  /*#i1
+  {
+    width:25px;
+    height:25px;
+    background-color:white;
+    border-radius:50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }*/
+  .fa-pencil-alt
+  {
+    width:40px;
+    height:30px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    margin-left: 50px;
+  }
+  .fa-pencil-alt:hover
+  {
+    width:42px;
+    height:32px;
+    border-radius: 50%;
+    background-color: gray;
+    border: none;
+  }
+  #fd
+  {
+    height: 53px;
+    background-color: lightgray;
+    border: 1px dashed black;
+    margin-top: 30px;
+  }
+  .plus-big
+  {
+    float: right;
+    margin-right: 30px;
+    width:40px;
+    height:33px;
+    border-radius: 50%;
+    background-color: blue;
+    border: none;
+    color: white;
+  }
+  .plus-big:hover
+  {
+    width:42px;
+    height:34px;
+    border-radius: 50%;
+    border: none;
+  }
+  #bot
+  {
+    border: none;
+    padding: 30px 20px 20px 0px;
+  }
+  
+  .can
+  { 
+    display: initial;
+    width: 120px;
+    height: 35px;
+    padding: 0%;
+    border-radius: 5%;
+    background-image: linear-gradient(to right, #f04d0d, rgb(235, 220, 15));
+    border: none;
+    color: white;
+  }
+  .upd
+  { 
+    display: initial;
+    width: 120px;
+    height: 35px;
+    padding: 0%;
+    border-radius: 5%;
+    background-image: linear-gradient(to right, #0dcaf0, darkblue);
+    border: none;
+    color: white;
+  }
+  .upd:hover, .can:hover, .bu:hover
+  {
+    width: 122px;
+    border-style: inset;
+    
+  }

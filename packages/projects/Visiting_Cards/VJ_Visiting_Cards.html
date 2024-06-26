@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <style type="text/css">
+      @media screen and (max-width: 453px) {
+        .card_width {
+          zoom: 0.8;
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .card_width {
+          zoom: 0.7;
+        }
+      }
+      @media screen and (max-width: 320px) {
+        .card_width {
+          zoom: 0.69;
+        }
+      }
+      @font-face {
+        font-family: "Poppins";
+        src: url(Fonts/Poppins-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Poppins-B";
+        src: url(Fonts/Poppins-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Poppins-SB";
+        src: url(Fonts/Poppins-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Carrois Gothic SC";
+        src: url(Fonts/CarroisGothicSC-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Cagliostro";
+        src: url(Fonts/Cagliostro-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Cantora One";
+        src: url(Fonts/CantoraOne-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Zen Antique Soft";
+        src: url(Fonts/ZenAntiqueSoft-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Zurich BdXCn BT";
+        src: url(Fonts/ZURCHBXC.ttf);
+      }
+      h1 {
+        text-align: center;
+      }
+      .card_width {
+        width: 450px;
+        height: 255px;
+        box-shadow: 5px 13px 24px rgba(183, 204, 246, 0.49);
+      }
+
+      /* <!-- Visiting Card - 013 Start --> */
+      .visit_card13 {
+        position: relative;
+        background-color: #ffffff;
+      }
+      .visit_card13_row {
+        width: 100%;
+        height: 100%;
+      }
+      .visit_card13_col1 {
+        display: grid;
+        align-content: center;
+      }
+      .visit_card13_namebox {
+        display: grid;
+        width: 100%;
+        height: auto;
+      }
+      .visit_card13_name {
+        width: auto;
+        height: auto;
+        font-family: "Poppins-SB";
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: #e8241b;
+      }
+      .visit_card13_title {
+        font-family: "Poppins-SB";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        color: #000000;
+      }
+      .visit_card13_phdiv,
+      .visit_card13_webdiv,
+      .visit_card13_locatediv {
+        width: auto;
+        height: fit-content;
+      }
+      .visit_card13_callicon {
+        color: #000000;
+        font-size: 13px;
+      }
+      .visit_card13_messageicon {
+        color: #000000;
+        font-size: 15px;
+      }
+      .visit_card13_locateicon {
+        color: #000000;
+        font-size: 16px;
+      }
+      .visit_card13_infobox {
+        display: grid;
+        width: 100%;
+        height: auto;
+        font-family: "Poppins-SB";
+        font-style: normal;
+        font-weight: 100;
+        color: #000000;
+        font-size: 13px;
+      }
+      .visit_card13_phno {
+        line-height: 22px;
+        letter-spacing: 0.04em;
+      }
+      .visit_card13_email {
+        line-height: 17px;
+        letter-spacing: 0.07em;
+      }
+      .visit_card13_address {
+        width: 160px;
+        line-height: 20px;
+        letter-spacing: 0.04em;
+      }
+      .visit_card13_bottom_bluediv {
+        position: absolute;
+        bottom: 0;
+        width: 275px;
+        height: 30px;
+        background-color: #059dcb;
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+      }
+      .visit_card13_col2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+      }
+      .visit_card13_triangle_reddiv {
+        background-color: #ff2f25;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 190px;
+        height: 115px;
+        clip-path: polygon(100% 0, 100% 35%, 60% 100%, 0 0);
+      }
+
+      .visit_card13_triangle_bluediv {
+        background-color: #059dcb;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 42px;
+        height: 69px;
+        clip-path: polygon(0% 60%, 100% 100%, 100% 0);
+      }
+      .visit_card13_img_div {
+        width: 68px;
+        height: 68px;
+        background-color: white;
+        border-radius: 23px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+      }
+      .visit_card13_Muviereck_logo {
+        width: 50px;
+        height: 47px;
+      }
+      /* <!-- Visiting Card - 013 End --> */
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid scrollbar pt-5">
+      <!-- Visiting Card - 013 Start -->
+      <h1 class="mt-5">Visiting Card - Sample</h1>
+      <div class="justify-content-center row m-0 mt-5 mb-5">
+        <div class="card_width container-fluid m-0 p-0 visit_card13">
+          <div class="row m-0 p-0 visit_card13_row">
+            <div class="col-6 m-0 p-0 visit_card13_col1">
+              <div class="ml-4 visit_card13_namebox">
+                <span class="ml-2 visit_card13_name">Yetlo Cards</span>
+                <span class="ml-2 visit_card13_title">Designation</span>
+              </div>
+              <div class="ml-4 mt-4 mb-4 visit_card13_infobox">
+                <div class="ml-2 visit_card13_phdiv d-flex">
+                  <span
+                    ><i class="fa-solid fa-phone visit_card13_callicon"></i
+                  ></span>
+                  <span class="ml-2 visit_card13_phno">9876543210</span>
+                </div>
+                <div class="ml-2 mt-2 visit_card13_webdiv d-flex">
+                  <span
+                    ><i
+                      class="fa-solid fa-envelope visit_card13_messageicon"
+                    ></i
+                  ></span>
+                  <span class="ml-2 visit_card13_email"
+                    >info@yetlocards.com</span
+                  >
+                </div>
+                <div class="ml-2 mt-2 visit_card13_locatediv d-flex">
+                  <span class="mt-1">
+                    <i
+                      class="fa-solid fa-location-dot visit_card13_locateicon"
+                    ></i
+                  ></span>
+                  <span class="ml-2 visit_card13_address"
+                    >Aminjikarai, Chennai, Tamil Nadu 600029</span
+                  >
+                </div>
+              </div>
+              <div class="visit_card13_bottom_bluediv"></div>
+            </div>
+            <div class="col-6 m-0 p-0 visit_card13_col2">
+              <div class="visit_card13_triangle_reddiv"></div>
+              <div class="visit_card13_triangle_bluediv"></div>
+              <div class="visit_card13_img_div">
+                <img
+                  src="Images/Muviereck_logo.png"
+                  alt="Muviereck_logo"
+                  class="img-fluid visit_card13_Muviereck_logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Visiting Card - 013 End -->
+    </div>
+  </body>
+</html>

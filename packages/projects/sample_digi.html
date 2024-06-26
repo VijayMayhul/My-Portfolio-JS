@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VJ_Digital_card_design</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      [wire\:loading],
+      [wire\:loading\.delay],
+      [wire\:loading\.inline-block],
+      [wire\:loading\.inline],
+      [wire\:loading\.block],
+      [wire\:loading\.flex],
+      [wire\:loading\.table],
+      [wire\:loading\.grid],
+      [wire\:loading\.inline-flex] {
+        display: none;
+      }
+
+      [wire\:loading\.delay\.shortest],
+      [wire\:loading\.delay\.shorter],
+      [wire\:loading\.delay\.short],
+      [wire\:loading\.delay\.long],
+      [wire\:loading\.delay\.longer],
+      [wire\:loading\.delay\.longest] {
+        display: none;
+      }
+
+      [wire\:offline] {
+        display: none;
+      }
+
+      [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+      }
+
+      input:-webkit-autofill,
+      select:-webkit-autofill,
+      textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+      }
+
+      @keyframes livewireautofill {
+        from {
+        }
+      }
+    </style>
+    <link
+      href="https://digitalcard.yetloapps.com/css/app.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://digitalcard.yetloapps.com/css/main.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://digitalcard.yetloapps.com/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://digitalcard.yetloapps.com/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://digitalcard.yetloapps.com/js/jquery-3.3.1.js"></script>
+    <script src="https://digitalcard.yetloapps.com/js/select2.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Work Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style
+      wire:id="0rAyoWoIq81dbaadSBlT"
+      wire:initial-data='{"fingerprint":{"id":"0rAyoWoIq81dbaadSBlT","name":"user.page","locale":"en","path":"card\/Muvierecktechscsacsdvdsvdsvfdbfbfbfbfbf\/4","method":"GET","v":"acj"},"effects":{"listeners":[]},"serverMemo":{"children":[],"errors":[],"htmlHash":"e96f8522","data":{"card_id":"4"},"dataMeta":[],"checksum":"1e54c502bf5c3260893026703d0f77d015611270e8a139374f05ee711edba244"}}'
+    >
+      .top_input {
+        width: 30%;
+        height: 45px;
+      }
+      .fa-long-arrow-left {
+        font-size: 24px !important;
+      }
+      .icons_top {
+        font-size: 24px !important;
+      }
+      .icon {
+        font-size: 20px;
+        padding-top: 13px;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 28px;
+        color: black !important;
+      }
+      .icon:hover {
+        background: #e5def0;
+        /*padding: 12px;*/
+        border-radius: 28px;
+      }
+      .bg_color_dash {
+        padding-top: 150px;
+        background-color: rgb(254, 84, 84);
+        border-radius: 15px 15px 0px 0;
+      }
+      .user_title {
+        font-size: 1.75rem;
+        font-weight: 800;
+        line-height: 2.25rem;
+        text-transform: capitalize;
+      }
+      .user_title_in {
+        font-size: 1.25rem;
+        line-height: 2rem;
+        text-transform: capitalize;
+      }
+      .user_department {
+        color: rgb(58, 89, 174);
+        font-size: 1.1rem;
+        font-weight: 800;
+        line-height: 1.5rem;
+        text-transform: capitalize;
+      }
+      .user_company {
+        font-size: 1.1rem;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.5rem;
+        text-transform: capitalize;
+      }
+      .user_con {
+        font-size: 1.1rem;
+      }
+      .icon_cont_on {
+        background: #e5def0;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding-top: 17px;
+        font-size: 20px;
+        color: white !important;
+      }
+      .card_number50 {
+        /* padding: 10px 15px; */
+        cursor: pointer;
+        background-color: #9618aa;
+        align-items: center;
+        display: flex;
+        border-radius: 8px;
+        width: 266px;
+        height: 58px;
+        border: 2px solid white;
+      }
+      .card_number_valu {
+        font-size: 1.1rem;
+      }
+      .top_img_ka {
+        width: 100px;
+        height: 100px;
+        border-radius: 0px 0px 0px 0px;
+      }
+      .card_radius50 {
+        border-radius: 31px;
+        width: 360px;
+        height: 800px;
+      }
+      .img_absolute {
+        left: 0;
+        position: absolute;
+        top: 222px;
+      }
+      .top_relative {
+        position: relative;
+      }
+      .back_icon {
+        padding: 15px;
+      }
+      .latter_overflow {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .sec_title {
+        font-family: Roboto, sans-serif;
+        color: #627293;
+        font-size: 1.25rem;
+      }
+      .sec_icon {
+        /*background: #E5DEF0;*/
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        padding-top: 9px;
+        font-size: 18px;
+        border-radius: 28px;
+        /*color: black !important;*/
+      }
+      .copy {
+        padding: 5px 22px;
+        text-transform: uppercase;
+        font-size: 15px;
+        color: #628af8;
+      }
+      .copy:hover {
+        background-color: #b1b1b11f;
+        color: #628af8;
+      }
+      .copy_icon {
+        font-size: 15px;
+        color: #628af8;
+      }
+      .link50 {
+        text-decoration: none;
+        color: black;
+      }
+      .margin_bottom_img {
+        margin-bottom: 35px;
+      }
+      .card_width50 {
+        width: auto;
+      }
+      @media screen and (max-width: 2560px) {
+        .card_width50 {
+          width: auto;
+        }
+        .img_absolute {
+          top: 224px;
+        }
+      }
+      @media screen and (max-width: 320px) {
+        .card_radius50 {
+          width: 300px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .img_absolute {
+          top: 233px;
+        }
+      }
+      @media screen and (max-width: 340px) {
+        .title-text {
+          margin-right: 80px;
+          margin-left: 80px;
+          padding: 30px;
+        }
+      }
+      .title-text {
+        text-align: center;
+        background-color: #33783b;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: system-ui;
+        font-size: 35px;
+        padding: 40px;
+        margin-right: 114px;
+        margin-left: 115px;
+        border-radius: 0px 0px 40px 40px;
+      }
+      .title-name {
+        text-transform: uppercase;
+        font-family: sans-serif;
+      }
+      .sub-text {
+        text-transform: uppercase;
+        background-color: #33783b;
+        padding: 10px;
+        margin-right: 122px;
+        font-weight: bold;
+        font-family: revert;
+        margin-left: 122px;
+        border-radius: 11px;
+        border: none;
+        box-shadow: 0px 0px 7px 3px;
+      }
+      .subs-text {
+        background-color: #fff;
+        padding: 7px;
+        margin-right: 122px;
+        margin-left: 122px;
+        border-radius: 11px;
+      }
+      .line {
+        width: 185px;
+        height: 0;
+        border: 1px solid #c4c4c4;
+        margin: 3px;
+        display: inline-block;
+      }
+      .fa-solid {
+        font-size: x-large;
+        vertical-align: bottom;
+      }
+      .para {
+        text-align: center;
+        color: #000 !important;
+      }
+      button {
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: revert;
+        background-color: #33783b;
+      }
+      /* .mb-3{
+      color:#fff;
+      }*/
+      .text-msg__bon {
+        /* background-color:#33783b;
+      padding: 2px;
+      border-radius: 0px 10px 10px 0px;
+      color:#fff !important;
+      margin:0px 0px 0px -31px !important; */
+        width: 217px !important;
+        padding: 1px;
+        height: 41px;
+        padding: 6px;
+        border-radius: 0px 20px 20px 0px;
+        color: #fff !important;
+        margin: 11px 0px 0px -26px !important;
+      }
+      .button_ka50 {
+        border: none;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: "Nunito";
+        font-style: normal;
+        color: #ffffff;
+        text-decoration: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        font-size: 19.6401px;
+        line-height: 27px;
+        width: 266px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .ma_ka {
+        margin: 13px 13px 24px 16px;
+        font-weight: 800;
+      }
+      .co_ka {
+        color: #fff !important;
+      }
+      .rectangle_ka {
+        text-align: center;
+        height: 100%;
+        width: 250px;
+        border-radius: 0px 0px 20px 20px;
+        box-shadow: 0px 0px 9px -2px;
+      }
+      .user_company_ka {
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+      }
+      .im_ka {
+        background-image: url(https://digitalcard.yetloapps.com/bg-img-in-temp.png);
+        border-radius: 16px;
+      }
+      .sec_card_shadow50 {
+        box-shadow: 5px 13px 24px rgba(183, 204, 246, 0.49);
+      }
+      .hide_download {
+        display: none;
+      }
+      .logobox50 {
+        width: 102px;
+        height: 89px;
+        background: #9618aa;
+        box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.07);
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+      }
+      .lo50 {
+        width: 62px;
+        height: 33px;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 21.8px;
+        line-height: 33px;
+        display: flex;
+        border-bottom: 2px solid #9618aa;
+      }
+      .comna50 {
+        width: 170.21px;
+        height: 27px;
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 19.6401px;
+        line-height: 27px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #9d9d9d;
+        border-bottom: 2px solid white;
+      }
+      .centerdiv50 {
+        display: grid;
+        place-items: center;
+      }
+      .clickinsta50 {
+        width: 142px;
+        height: 23px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #ffffff;
+      }
+      .linkedicon50 {
+        color: #9618aa;
+        text-shadow: -1px -1px 0 #fff, 0 -1px 0 #fff, 1px -1px 0 #fff,
+          1px 0 0 #fff, 1px 1px 0 #fff, 0 1px 0 #fff, -1px 1px 0 #fff,
+          -1px 0 0 #fff;
+        font-size: 30px;
+        margin: -5px 20px 0px 20px;
+      }
+      .instaicon50 {
+        font-size: 30px;
+        color: white;
+        margin: 0px 20px 0px 20px;
+      }
+      .bottomdiv50 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <div
+      class="container-fluid scrollbar d-flex justify-content-center style-15"
+    >
+      <div class="row d-flex justify-content-center">
+        <div class="col-4 card_width50 m-auto p-0 mt-5 mb-5">
+          <div class="card card_radius50 sec_card_shadow50">
+            <div class="card_hover50">
+              <div
+                class="card_title50 pt-1"
+                style="text-align: -webkit-center; text-align: -moz-center"
+              >
+                <div class="mt-5 logobox50">
+                  <span class="lo50">logo</span>
+                </div>
+                <div class="mt-3 comna50">company name</div>
+              </div>
+              <br />
+
+              <div class="mb-5 mt-5 centerdiv50 justify-content-center">
+                <a
+                  href=""
+                  style="text-decoration: none"
+                  class=""
+                  target=""
+                  class="link50"
+                >
+                  <div class="card_number50 mb-3">
+                    <!-- <i class="fa fa-linkedin" aria-hidden="true"></i> -->
+                    <i class="fa-brands fa-linkedin-in linkedicon50"></i>
+                    <span class="ms-3 clickinsta50">Click for Instagram</span>
+                  </div>
+                </a>
+                <a
+                  href=""
+                  style="text-decoration: none"
+                  class=""
+                  target=""
+                  class="link50"
+                >
+                  <div class="card_number50 mb-3">
+                    <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+                    <i class="fa-brands fa-instagram instaicon50"></i>
+                    <span class="ms-3 clickinsta50">Click for Instagram</span>
+                  </div>
+                </a>
+                <a
+                  href=""
+                  style="text-decoration: none"
+                  class=""
+                  target=""
+                  class="link50"
+                >
+                  <div class="card_number50 mb-3">
+                    <!-- <i class="fa fa-linkedin" aria-hidden="true"></i> -->
+                    <i class="fa-brands fa-linkedin-in linkedicon50"></i>
+                    <span class="ms-3 clickinsta50">Click for Instagram</span>
+                  </div>
+                </a>
+                <a
+                  href=""
+                  style="text-decoration: none"
+                  class=""
+                  target=""
+                  class="link50"
+                >
+                  <div class="card_number50 mb-3">
+                    <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+                    <i class="fa-brands fa-instagram instaicon50"></i>
+                    <span class="ms-3 clickinsta50">Click for Instagram</span>
+                  </div>
+                </a>
+                <a
+                  href=""
+                  style="text-decoration: none"
+                  class=""
+                  target=""
+                  class="link50"
+                >
+                  <div class="card_number50 mb-3">
+                    <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+                    <i class="fa-brands fa-instagram instaicon50"></i>
+                    <span class="ms-3 clickinsta50">Click for Instagram</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mb-3 mt-5 bottomdiv50">
+                <a
+                  href=""
+                  style="background-color: #575757"
+                  class="button_ka50 text-white"
+                  >save to contacts</a
+                >
+              </div>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://digitalcard.yetloapps.com/js/bootstrap5-bundle.js"></script>
+    <script src="https://digitalcard.yetloapps.com/js/slim.min.js"></script>
+    <script src="https://digitalcard.yetloapps.com/js/bootstrap-bundle-min.js"></script>
+    <script src="https://digitalcard.yetloapps.com/js/menu.js"></script>
+  </body>
+</html>

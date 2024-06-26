@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+      table {
+        width: 80%;
+        text-align: center;
+        border-spacing: 0;
+      }
+
+      th {
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+        width: 15%;
+      }
+      td {
+        border: 1px solid black;
+      }
+      #add-button {
+        width: 100%;
+        background-color: darkgreen;
+        color: white;
+        cursor: pointer;
+      }
+      #add-button:hover {
+        color: yellow;
+        outline-style: 1px solid inset;
+      }
+      #rem_but {
+        width: 100%;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+      }
+      #rem_but:hover {
+        color: black;
+        outline-style: 1px solid inset;
+      }
+      #proTab tbody tr td:last-child,
+      #shop-table tbody tr td:last-child {
+        border: none;
+      }
+      #main-div {
+        overflow-x: scroll;
+        display: grid;
+        justify-items: center;
+      }
+    </style>
+    <script>
+      var disTrade;
+      var pro_productName;
+      var pro_orgPrice;
+      var pro_tradeName;
+      var pro_vendor;
+      var dis_per;
+      var discount_price;
+      var shop_sNo = 0;
+      var shop_productName;
+      var shop_orgPrice;
+      var shop_discount_percentage;
+      var shop_discounted_price;
+      var shop_vendorName;
+      var shop_removeButton =
+        "<button id='rem_but' onclick='del_row(this)'>Remove Cart</button>";
+      var totalAmount = 0;
+
+      function add_card(x) {
+        var pe = x.parentElement.parentElement;
+        //console.log(pe);
+        pro_productName = pe.cells[1].innerHTML;
+        pro_orgPrice = pe.cells[2].innerHTML;
+        pro_tradeName = pe.cells[3].innerHTML;
+        pro_vendor = pe.cells[4].innerHTML;
+
+        //console.log(tag);
+
+        var disTab = document.getElementById("disTab");
+        var row_len = disTab.rows.length;
+        var cell_len = disTab.rows[0].cells.length;
+        //console.log(row_len);
+        //var dis_vendor;
+        var ri;
+        var ci;
+
+        for (var i = 1; i < row_len; i++) {
+          var Vendor = disTab.rows[i].cells[0];
+          if (pro_vendor == Vendor.innerHTML) {
+            var dis_vendor = Vendor;
+            ri = Vendor.parentElement.rowIndex;
+            //console.log(ri);
+          }
+        }
+        for (var j = 1; j < cell_len; j++) {
+          var Trade = disTab.rows[0].cells[j];
+          var Tra = Trade.innerHTML.toUpperCase();
+          //console.log(Trade);
+          if (pro_tradeName.match(Tra)) {
+            var dis_tag = Trade;
+            ci = dis_tag.cellIndex;
+            //console.log(ci);
+          }
+        }
+        dis_per = disTab.rows[ri].cells[ci].innerHTML;
+        discount();
+      }
+      function discount() {
+        if (dis_per == "N/A") {
+          discount_price = pro_orgPrice;
+          //console.log(discount_price);
+        } else {
+          var dis = (pro_orgPrice * dis_per) / 100;
+          discount_price = pro_orgPrice - dis;
+          //console.log(discount_price);
+        }
+        shop_assign();
+      }
+      function shop_assign() {
+        shop_sNo++;
+        shop_productName = pro_productName;
+        shop_orgPrice = pro_orgPrice;
+        shop_discount_percentage = dis_per;
+        shop_discounted_price = discount_price;
+        shop_vendorName = pro_vendor;
+
+        var tb = document.getElementById("shopTab");
+        var rw = tb.insertRow();
+        var c1 = rw.insertCell(0);
+        var c2 = rw.insertCell(1);
+        var c3 = rw.insertCell(2);
+        var c4 = rw.insertCell(3);
+        var c5 = rw.insertCell(4);
+        var c6 = rw.insertCell(5);
+        var c7 = rw.insertCell(6);
+
+        c1.innerHTML = shop_sNo;
+        c2.innerHTML = shop_productName;
+        c3.innerHTML = shop_orgPrice;
+        c4.innerHTML = shop_discount_percentage;
+        c5.innerHTML = shop_discounted_price;
+        c6.innerHTML = shop_vendorName;
+        c7.innerHTML = shop_removeButton;
+
+        tot();
+
+        // console.log(
+        //   shop_sNo +
+        //     " " +
+        //     shop_productName +
+        //     " " +
+        //     shop_orgPrice +
+        //     " " +
+        //     shop_discount_percentage +
+        //     " " +
+        //     shop_discounted_price +
+        //     " " +
+        //     shop_vendorName
+        // );
+      }
+      function tot() {
+        var tb = document.getElementById("shopTab");
+        totalAmount =
+          totalAmount + parseFloat(tb.rows[shop_sNo].cells[4].innerHTML);
+        //console.log(totalAmount);
+        document.getElementById("tot").innerHTML = totalAmount.toFixed(2);
+      }
+      function del_row(x) {
+        shop_sNo--;
+        var tb = document.getElementById("shopTab");
+        var rw = x.parentElement.parentElement;
+        var ri = rw.rowIndex;
+
+        totalAmount = totalAmount - parseFloat(tb.rows[ri].cells[4].innerHTML);
+        if (totalAmount == -0.0) {
+          totalAmount = 0;
+        }
+        document.getElementById("tot").innerHTML = totalAmount.toFixed(2);
+        tb.rows[ri].remove();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="main-div">
+      <h1>Discount Table</h1>
+      <table id="disTab">
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Trade A</th>
+            <th>Trade B</th>
+            <th>Trade C</th>
+            <th>Trade D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vendor 1</td>
+            <td>12</td>
+            <td>12</td>
+            <td>N/A</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Vendor 2</td>
+            <td>10</td>
+            <td>8</td>
+            <td>20</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Vendor 3</td>
+            <td>N/A</td>
+            <td>25</td>
+            <td>3</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>Vendor 4</td>
+            <td>9</td>
+            <td>N/A</td>
+            <td>16</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>Vendor 5</td>
+            <td>5</td>
+            <td>11</td>
+            <td>N/A</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1>Product Table</h1>
+      <table id="proTab">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Tags</th>
+            <th>Vendor</th>
+            <th>Card</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Test Product 1</td>
+            <td>12.5</td>
+            <td>TRADE A,ice</td>
+            <td>Vendor 5</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Test Product 2</td>
+            <td>42.5</td>
+            <td>TRADE B,ice2</td>
+            <td>Vendor 4</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Test Product 3</td>
+            <td>200</td>
+            <td>TRADE C,test</td>
+            <td>Vendor 3</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Test Product 4</td>
+            <td>52.5</td>
+            <td>TRADE C,test</td>
+            <td>Vendor 2</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Test Product 5</td>
+            <td>712.5</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 1</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Test Product 6</td>
+            <td>17.00</td>
+            <td>TRADE A,test</td>
+            <td>Vendor 3</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Test Product 7</td>
+            <td>55.00</td>
+            <td>TRADE A,test</td>
+            <td>Vendor 3</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Test Product 11</td>
+            <td>37.00</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 4</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Test Product 9</td>
+            <td>82.00</td>
+            <td>TRADE C,test</td>
+            <td>Vendor 4</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Test Product 10</td>
+            <td>52.00</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 2</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Test Product 22</td>
+            <td>102.00</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 1</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Test Product 457</td>
+            <td>172.50</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 4</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Test Product 15</td>
+            <td>100.00</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 5</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Test Product 33</td>
+            <td>99.50</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 5</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Test Product 85</td>
+            <td>87.50</td>
+            <td>TRADE A,test</td>
+            <td>Vendor 1</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Test Product 63</td>
+            <td>57.00</td>
+            <td>TRADE A,test</td>
+            <td>Vendor 1</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Test Product 74</td>
+            <td>10.00</td>
+            <td>TRADE C,test</td>
+            <td>Vendor 2</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Test Product 102</td>
+            <td>412.50</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 3</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Test Product 358</td>
+            <td>112.50</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 4</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Test Product 568</td>
+            <td>102.00</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 5</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Test Product 475</td>
+            <td>52.00</td>
+            <td>TRADE A,test</td>
+            <td>Vendor 3</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>Test Product 28</td>
+            <td>32.00</td>
+            <td>TRADE C,test</td>
+            <td>Vendor 2</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>Test Product 1405</td>
+            <td>12.00</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 4</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>Test Product 389</td>
+            <td>584.50</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 1</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Test Product 555</td>
+            <td>67.00</td>
+            <td>TRADE D,test</td>
+            <td>Vendor 5</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>Test Product 444</td>
+            <td>132.50</td>
+            <td>TRADE A,test</td>
+            <td>Vendor 5</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>Test Product 333</td>
+            <td>42.50</td>
+            <td>TRADE B,test</td>
+            <td>Vendor 2</td>
+            <td>
+              <button id="add-button" onclick="add_card(this)">
+                Add to Cart
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h1>Shopping Cart</h1>
+      <table id="shopTab">
+        <thead>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Org Price</th>
+          <th>Discount Percentage</th>
+          <th>Discounted Price</th>
+          <th>Vendor</th>
+          <th>Remove Cart</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h1>Total Price : Rs. <span id="tot">0</span></h1>
+    </div>
+  </body>
+</html>

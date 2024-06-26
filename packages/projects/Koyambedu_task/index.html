@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="base container-fluid">
+      <button class="bu btn btn-animated btn-info">
+        <i class="fas fa-angle-double-left"></i>
+        <span> Go Back</span>
+      </button>
+      <br />
+      <h1 class="heading bg-info">Edit Product</h1>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="">General</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Data</a></li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#it">Stock</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="">Attributes</a></li>
+            <li class="nav-item"><a class="nav-link" href="">SEO</a></li>
+          </ul>
+        </nav>
+        <div align="right">
+          <button id="help">Help</button>
+        </div>
+        <center>
+          <div class="collapse" id="it">
+            <div class="insidediv">
+              <table class="bigT" id="bigT1">
+                <tr>
+                  <td class="BTt1">
+                    <button class="bbu btn btn-info">
+                      Whole Sale (B2B)
+                      <i class="fa fa-plus ii" aria-hidden="true"></i>
+                    </button>
+                    <div class="hidediv" id="s1">
+                      <table class="bg-light">
+                        <tr>
+                          <td>
+                            <label for="me1">Measurement <big>*</big></label>
+                            <input type="text" id="me1" required />
+                          </td>
+                          <td>
+                            <label for="mu1"
+                              >Measurement Unit <big>*</big></label
+                            >
+                            <select name="meu" id="mu1">
+                              <option value="">Select</option>
+                              <option value="Box">Box</option>
+                              <option value="Bundle">Bundle</option>
+                              <option value="Grm">Grm</option>
+                              <option value="Kg">Kg</option>
+                              <option value="Ltr">Ltr</option>
+                              <option value="Ml">ML</option>
+                              <option value="Mtr">Mtr</option>
+                              <option value="Nos">Nos</option>
+                              <option value="Packet">Packet</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="pr1">Price <big>*</big></label>
+                            <input type="text" id="pr1" required />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="dt1">Discount Type</label>
+                            <select name="dist" id="dt1">
+                              <option value="Amount">Amount</option>
+                              <option value="Percent">Percent</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="d1">Discount</label>
+                            <input type="text" id="d1" />
+                          </td>
+                          <td>
+                            <label for="dp1">Discounted Price</label>
+                            <input type="text" id="dp1" readonly />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="sc1">Stock City <big>*</big></label>
+                            <input type="text" id="sc1" required />
+                          </td>
+                          <td>
+                            <label for="su1">Stock Unit <big>*</big></label>
+                            <select name="stou" id="su1">
+                              <option value="">Select</option>
+                              <option value="Bundle">Bundle</option>
+                              <option value="Kg">Kg</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="ss1">Stock Status <big>*</big></label>
+                            <select name="stos" id="ss1">
+                              <option value="Available">Available</option>
+                              <option value="Sold Out">Sold Out</option>
+                              <option value="Not Available">
+                                Not Available
+                              </option>
+                              <option value="Shop Closed">Shop Closed</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="moq1">Min Order Qty</label>
+                            <input type="text" id="moq1" required />
+                          </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                  <td class="BTt2" rowspan="4">
+                    <button
+                      class="fa fa-trash del"
+                      aria-hidden="true"
+                      id="trash"
+                    ></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button class="bbu btn btn-info">
+                      Semi Whole Sale (B2B)
+                      <i class="fa fa-plus ii" aria-hidden="true"></i>
+                    </button>
+                    <div class="hidediv" id="s2">
+                      <table class="bg-light">
+                        <tr>
+                          <td>
+                            <label for="me2">Measurement <big>*</big></label>
+                            <input type="text" id="me2" required />
+                          </td>
+                          <td>
+                            <label for="mu2"
+                              >Measurement Unit <big>*</big></label
+                            >
+                            <select name="meu" id="mu2">
+                              <option value="">Select</option>
+                              <option value="Box">Box</option>
+                              <option value="Bundle">Bundle</option>
+                              <option value="Grm">Grm</option>
+                              <option value="Kg">Kg</option>
+                              <option value="Ltr">Ltr</option>
+                              <option value="Ml">ML</option>
+                              <option value="Mtr">Mtr</option>
+                              <option value="Nos">Nos</option>
+                              <option value="Packet">packet</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="pr2">Price <big>*</big></label>
+                            <input type="text" id="pr2" required />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="dt2">Discount Type</label>
+                            <select name="dist" id="dt2">
+                              <option value="Amount">Amount</option>
+                              <option value="Percent">Percent</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="d2">Discount</label>
+                            <input type="text" id="d2" />
+                          </td>
+                          <td>
+                            <label for="dp2">Discounted Price</label>
+                            <input type="text" id="dp2" readonly />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="sc2">Stock City <big>*</big></label>
+                            <input type="text" id="sc2" required />
+                          </td>
+                          <td>
+                            <label for="su2">Stock Unit <big>*</big></label>
+                            <select name="stou" id="su2">
+                              <option value="">Select</option>
+                              <option value="Bundle">Bundle</option>
+                              <option value="Kg">Kg</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="ss2">Stock Status <big>*</big></label>
+                            <select name="stos" id="ss2">
+                              <option value="Available">Available</option>
+                              <option value="Sold Out">Sold Out</option>
+                              <option value="Not Available">
+                                Not Available
+                              </option>
+                              <option value="Shop Closed">Shop Closed</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="moq2">Min Order Qty</label>
+                            <input type="text" id="moq2" required />
+                          </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button class="bbu btn btn-info">
+                      Retail (B2C)
+                      <i class="fa fa-plus ii" aria-hidden="true"></i>
+                    </button>
+                    <div class="hidediv" id="s3">
+                      <table class="bg-light">
+                        <tr>
+                          <td>
+                            <label for="me3">Measurement <big>*</big></label>
+                            <input type="text" id="me3" value="1" required />
+                          </td>
+                          <td>
+                            <label for="mu3"
+                              >Measurement Unit <big>*</big></label
+                            >
+                            <select name="meu" id="mu3">
+                              <option value="">Select</option>
+                              <option value="Box">Box</option>
+                              <option value="Bundle">Bundle</option>
+                              <option value="Grm">Grm</option>
+                              <option value="Kg">Kg</option>
+                              <option value="Ltr">Ltr</option>
+                              <option value="Ml">ML</option>
+                              <option value="Mtr">Mtr</option>
+                              <option value="Nos">Nos</option>
+                              <option value="Packet" selected>Packet</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="pr3">Price <big>*</big></label>
+                            <input type="text" id="pr3" value="48" required />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="dt2">Discount Type</label>
+                            <select name="dist" id="dt2">
+                              <option value="Amount" selected>Amount</option>
+                              <option value="Percent">Percent</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="d2">Discount</label>
+                            <input type="text" id="d2" value="0" />
+                          </td>
+                          <td>
+                            <label for="dp2">Discounted Price</label>
+                            <input type="text" id="dp2" value="48" readonly />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="sc2">Stock City <big>*</big></label>
+                            <input type="text" id="sc2" value="12" required />
+                          </td>
+                          <td>
+                            <label for="su2">Stock Unit <big>*</big></label>
+                            <select name="stou" id="su2">
+                              <option value="">Select</option>
+                              <option value="Box">Box</option>
+                              <option value="Bundle">Bundle</option>
+                              <option value="Grm">Grm</option>
+                              <option value="Kg">Kg</option>
+                              <option value="Ltr">Ltr</option>
+                              <option value="Ml">ML</option>
+                              <option value="Mtr">Mtr</option>
+                              <option value="Nos">Nos</option>
+                              <option value="Packet" selected>Packet</option>
+                            </select>
+                          </td>
+                          <td>
+                            <label for="ss2">Stock Status <big>*</big></label>
+                            <select name="stos" id="ss2">
+                              <option value="Available">Available</option>
+                              <option value="Sold Out">Sold Out</option>
+                              <option value="Not Available">
+                                Not Available
+                              </option>
+                              <option value="Shop Closed">Shop Closed</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label for="moq2">Min Order Qty</label>
+                            <input type="text" id="moq2" value="1" required />
+                          </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button class="bbu btn btn-info">
+                      Add Images
+                      <i class="fa fa-plus ii" aria-hidden="true"></i>
+                    </button>
+                    <div class="bg-light hidediv" id="s4">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          <button class="fas fa-pencil-alt"></button>
+                        </div>
+                        <div class="col-sm-2">
+                          <button class="fas fa-pencil-alt"></button>
+                        </div>
+                        <div class="col-sm-2">
+                          <button class="fas fa-pencil-alt"></button>
+                        </div>
+                        <div class="col-sm-2">
+                          <button class="fas fa-pencil-alt"></button>
+                        </div>
+                        <div class="col-sm-2">
+                          <button class="fas fa-pencil-alt"></button>
+                        </div>
+                        <div class="col-sm-2">
+                          <button class="fas fa-pencil-alt"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </center>
+        <div class="container-fluid" id="fd">
+          <button class="fas fa-plus plus-big" id="extradiv"></button>
+        </div>
+        <div class="container-fluid" id="bot" align="right">
+          <button class="btn upd">
+            <i class="fa fa-check" aria-hidden="true"></i>&nbsp;Update</button
+          >&nbsp;&nbsp;&nbsp;
+          <button class="btn can">
+            <i class="fa fa-times" aria-hidden="true"></i>&nbsp;Cancel
+          </button>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+  </body>
+</html>
