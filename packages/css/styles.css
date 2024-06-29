@@ -430,6 +430,18 @@ img {
   background-color: #fff;
 }
 
+.button-send-div{
+  display: flex;
+  justify-content: start;
+}
+
+@media screen and (max-width: 425px) {
+  .button-send-div{
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .button--flex {
   display: inline-flex;
   align-items: center;
