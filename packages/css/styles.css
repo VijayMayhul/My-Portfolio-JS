@@ -270,8 +270,8 @@ img {
 
 .nav__close {
   position: absolute;
-  right: 4rem;
-  bottom: 3.5rem;
+  right: 13.4rem;
+  bottom: 0.3rem;
   font-size: 2.5rem;
   cursor: pointer;
   color: var(--first-color);
@@ -280,16 +280,16 @@ img {
 @media screen and (max-width:375px) {
   .nav__close {
     position: absolute;
-    right: 3rem;
-    bottom: 3.5rem;
+    right: 10.4rem;
+    bottom: 0.3rem;
   }
 }
 
 @media screen and (max-width:320px) {
   .nav__close {
     position: absolute;
-    right: 2rem;
-    bottom: 3.5rem;
+    right: 8.7rem;
+    bottom: 0.3rem;
   }
   
 }

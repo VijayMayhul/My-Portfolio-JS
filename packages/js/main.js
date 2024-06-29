@@ -219,41 +219,83 @@ function sendEmail() {
   let c_sub = document.getElementById("c_subject").value;
   let c_des = document.getElementById("c_details").value;
 
-  let body =
-    "Name : " +
-    c_na +
-    "<br> Email : " +
-    c_em +
-    "<br> Subject : " +
-    c_sub +
-    "<br> Message : " +
-    c_des;
+  let body = `
+    Name: ${c_na}<br>
+    Email: ${c_em}<br>
+    Subject: ${c_sub}<br>
+    Message: ${c_des}
+  `;
 
-  if (c_na == "" || c_em == "") {
+  if (c_na === "" || c_em === "" || c_sub === "" || c_des === "") {
     alert("Please fill all the fields in the contact form");
-  } else {
-    Email.send({
-      SecureToken: "2f2923c7-6511-42ea-8260-585af9c13ae3",
-      To: "vijaymayhul@gmail.com",
-      From: "vijaysundaram333@gmail.com",
-      Subject: "New Contact Form Enquiry",
-      Body: body,
-    }).then((message) => {
-      alert("Your Message Sent Successfully ! I will Contact you soon !");
-      document.getElementById("c_name").value = "";
-      document.getElementById("c_email").value = "";
-      document.getElementById("c_subject").value = "";
-      document.getElementById("c_details").value = "";
-    });
+    return;
   }
+
+  Email.send({
+    SecureToken: "4dcb5f93-6fde-4346-b199-1110e1a7c294",
+    To: "vijaymayhul@gmail.com",
+    From: "vijaysofficial369@gmail.com",
+    Subject: "New Contact Form Enquiry",
+    Body: body,
+  })
+  .then((message) => {
+    console.log(message);
+    alert("Your Message Sent Successfully! I will contact you soon!");
+    document.getElementById("c_name").value = "";
+    document.getElementById("c_email").value = "";
+    document.getElementById("c_subject").value = "";
+    document.getElementById("c_details").value = "";
+  })
+  .catch((error) => {
+    console.error("Error sending email:", error);
+    alert("There was an error sending your message. Please try again later.");
+  });
 
   // Email.send({
   //   Host: "smtp.elasticemail.com",
-  //   Username: "vijaysundaram333@gmail.com",
-  //   Password: "B44AD7D162A340BCA725DDF01DB6587715BA",
+  //   Username: "vijaysofficial369@gmail.com",
+  //   Password: "E6F332A332350D923BDF1565538EB1FA61D5",
+  //   port : 2525,
   //   To: "vijaysundaram333@gmail.com",
   //   From: "vijaysundaram333@gmail.com",
   //   Subject: "This is the subject",
   //   Body: "And this is the body",
   // }).then((message) => alert(message));
 }
+
+
+// function sendEmail(e) {
+//   e.preventDefault();
+//   let c_na = document.getElementById("c_name").value;
+//   let c_em = document.getElementById("c_email").value;
+//   let c_sub = document.getElementById("c_subject").value;
+//   let c_des = document.getElementById("c_details").value;
+
+//   let body =
+//     "Name : " +
+//     c_na +
+//     "<br> Email : " +
+//     c_em +
+//     "<br> Subject : " +
+//     c_sub +
+//     "<br> Message : " +
+//     c_des;
+
+//   if (c_na == "" || c_em == "") {
+//     alert("Please fill all the fields in the contact form");
+//   } else {
+//     Email.send({
+//       SecureToken: "2f2923c7-6511-42ea-8260-585af9c13ae3",
+//       To: "vijaymayhul@gmail.com",
+//       From: "vijaysundaram333@gmail.com",
+//       Subject: "New Contact Form Enquiry",
+//       Body: body,
+//     }).then((message) => {
+//       alert("Your Message Sent Successfully ! I will Contact you soon !");
+//       document.getElementById("c_name").value = "";
+//       document.getElementById("c_email").value = "";
+//       document.getElementById("c_subject").value = "";
+//       document.getElementById("c_details").value = "";
+//     });
+//   }
+// }
